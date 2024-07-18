@@ -40,3 +40,10 @@ const game = {
     team2: 6.5,
   },
 };
+
+const players1 = [...game.players[0]];
+const players2 = [...game.players[1]];
+const [gk1, ...fieldplayers1] = players1;
+const [gk2, ...fieldplayers2] = players2;
+
+console.log(gk2, fieldplayers2);
