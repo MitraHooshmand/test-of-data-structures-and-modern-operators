@@ -41,8 +41,6 @@ const game = {
   },
 };
 
-// const players1 = [...game.players[0]];
-// const players2 = [...game.players[1]];
 const [players1, players2] = game.players;
 const [gk1, ...fieldplayers1] = players1;
 const [gk2, ...fieldplayers2] = players2;
@@ -56,5 +54,14 @@ team1 > team2 && console.log("team2 is winer");
 const printGoals = function (...params) {
   console.log(`${params.length} is scored`);
 };
+
+const totalGols = Object.entries(game.scored);
+for (let [num, gol] of totalGols) {
+  num = Number(num) + 1;
+  console.log(`the ${num}st goal is done by ${gol}`);
+}
+
+
+
 
 printGoals("sara", "dara");
