@@ -54,14 +54,20 @@ team1 > team2 && console.log("team2 is winer");
 const printGoals = function (...params) {
   console.log(`${params.length} is scored`);
 };
+printGoals("sara", "dara");
 
-const totalGols = Object.entries(game.scored);
-for (let [num, gol] of totalGols) {
-  num = Number(num) + 1;
-  console.log(`the ${num}st goal is done by ${gol}`);
+for (let [i, gol] of game.scored.entries()) {
+  console.log(`the ${i + 1}st goal is done by ${gol}`);
 }
 
+let sum = 0;
+for (let value of Object.values(game.odds)) {
+  sum += Number(value);
+}
+let averageNum = Math.trunc(sum / Object.values(game.odds).length);
+console.log(`the average of odds is ${averageNum}`);
 
-
-
-printGoals("sara", "dara");
+for (let [team, score] of Object.entries(game.odds)) {
+  const teamName = team === "x" ? "draw" : `victory ${game[team]}`;
+  console.log(`Odd of ${teamName} is: ${score} `);
+}
