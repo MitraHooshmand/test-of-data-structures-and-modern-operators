@@ -1,0 +1,22 @@
+body {
+  background-color: bisque;
+  font-family: sans-serif;
+}
+
+h1 {
+  background-color: red;
+  border-radius: 50px;
+  color: white;
+}
+
+p {
+  background-color: rgb(121, 74, 74);
+  border-radius: 10px;
+  color: white;
+}
+
+ul {
+  background-color: rgb(116, 154, 236);
+  border-radius: 50px;
+  color: white;
+}/*# sourceMappingURL=style.css.map */

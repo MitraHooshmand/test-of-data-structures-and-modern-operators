@@ -1,0 +1,21 @@
+@mixin textStyles($bgColor, $border, $color) {
+  background-color: $bgColor;
+  border-radius: $border;
+  color: $color;
+}
+
+body {
+  background-color: bisque;
+  font-family: sans-serif;
+}
+
+h1 {
+  @include textStyles(red, 50px, white);
+}
+
+p {
+  @include textStyles(rgb(121, 74, 74), 10px, white);
+}
+ul {
+  @include textStyles(rgb(116, 154, 236), 50px, white);
+}
