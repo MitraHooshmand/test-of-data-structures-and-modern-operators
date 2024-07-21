@@ -85,3 +85,14 @@ const gameEvents = new Map([
   [80, "⚽️ GOAL"],
   [92, "🔶 Yellow card"],
 ]);
+
+const events = new Set(gameEvents.values());
+console.log(events);
+gameEvents.delete(64);
+console.log(gameEvents);
+
+for (let [minutes, item] of gameEvents) {
+  console.log(
+    ` ${minutes < 45 ? "[First Half]" : "[Second Half]"} ${minutes}: ${item}`
+  );
+}
