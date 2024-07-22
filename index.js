@@ -86,13 +86,16 @@ const gameEvents = new Map([
   [92, "🔶 Yellow card"],
 ]);
 
-const events = new Set(gameEvents.values());
+const events = [...new Set(gameEvents.values())];
 console.log(events);
 gameEvents.delete(64);
 console.log(gameEvents);
-
+const time = [...gameEvents.keys()];
+console.log(
+  `the average time of every event is : ${time.pop() / gameEvents.size}`
+);
 for (let [minutes, item] of gameEvents) {
   console.log(
-    ` ${minutes < 45 ? "[First Half]" : "[Second Half]"} ${minutes}: ${item}`
+    ` ${minutes <= 45 ? "[First Half]" : "[Second Half]"} ${minutes}: ${item}`
   );
 }
