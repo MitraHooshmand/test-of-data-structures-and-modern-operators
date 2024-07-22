@@ -111,3 +111,20 @@ const capitalizeFirstLetters = function (param) {
 
 capitalizeFirstLetters("hi my name is ALI");
 capitalizeFirstLetters("I REAALy enjoy codinG");
+
+const makeDigitsHidden = function (number) {
+  const str = number + "";
+  const last4Digits = str.slice(-4);
+
+  console.log(last4Digits.padStart(str.length, "*"));
+};
+
+makeDigitsHidden(3930984824);
+makeDigitsHidden("23456789065434567");
+
+const showEmoji = function (n) {
+  console.log(`there are ${n} emoji ${"🤩".repeat(n)}`);
+};
+
+showEmoji(4);
+showEmoji(44);
