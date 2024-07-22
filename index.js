@@ -99,3 +99,15 @@ for (let [minutes, item] of gameEvents) {
     ` ${minutes <= 45 ? "[First Half]" : "[Second Half]"} ${minutes}: ${item}`
   );
 }
+
+const capitalizeFirstLetters = function (param) {
+  const paramLower = param.toLowerCase().split(" ");
+  let result = [];
+  for (let item of paramLower) {
+    result.push(item.replace(item[0], item[0].toUpperCase()));
+  }
+  console.log(result.join(" "));
+};
+
+capitalizeFirstLetters("hi my name is ALI");
+capitalizeFirstLetters("I REAALy enjoy codinG");
