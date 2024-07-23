@@ -127,4 +127,27 @@ const showEmoji = function (n) {
 };
 
 showEmoji(4);
-showEmoji(44);
+
+document.body.append(document.createElement("textarea"));
+document.body.append(document.createElement("button"));
+
+document.querySelector("button").addEventListener("click", function () {
+  let firstStr,
+    secondStr,
+    result = "";
+  const str = document.querySelector("textarea").value;
+  const sepratedLineStr = str.split("\n");
+
+  for (let [i, item] of sepratedLineStr.entries()) {
+    [firstStr, secondStr] = item.toLowerCase().trim().split("_");
+    result = `${firstStr}${secondStr.replace(
+      secondStr[0],
+      secondStr[0].toUpperCase()
+    )}`;
+    console.log(`${result.padEnd(20)} ${"✅".repeat(i + 1)}`);
+  }
+});
+
+// and ${"🌺".repeat(counter)}
+//  for (let item of paramLower) {
+//     result.push(item.replace(item[0], item[0].toUpperCase()));
