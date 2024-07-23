@@ -148,6 +148,18 @@ document.querySelector("button").addEventListener("click", function () {
   }
 });
 
-// and ${"🌺".repeat(counter)}
-//  for (let item of paramLower) {
-//     result.push(item.replace(item[0], item[0].toUpperCase()));
+///////////////////////////////// FLIGHTS
+
+const flights =
+  "_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30";
+const formatLocation = (str) => str.slice(0, 3).toUpperCase();
+for (let row of flights.split("+")) {
+  let [str, location, destination, time] = row.trim().split(";");
+  let output = `${str.startsWith("_Delayed") ? "🔴" : ""}${str.replaceAll(
+    "_",
+    " "
+  )} from ${formatLocation(location)} to ${formatLocation(
+    destination
+  )} (${time.replace(":", "h")})`.padStart(45);
+  console.log(output);
+}
