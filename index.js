@@ -163,3 +163,28 @@ for (let row of flights.split("+")) {
   )} (${time.replace(":", "h")})`.padStart(45);
   console.log(output);
 }
+
+/////////////////////////////////////////
+
+const greet = (greeting) => (name) => console.log(` ${greeting} dear ${name}`);
+
+greet("hey")("ALI");
+
+////////////////////////////////////////////////////////// Call, APlly and Bind
+
+const zargros = {
+  airline: "zagros",
+  itaCode: "ZA",
+  bookings: [],
+  // book : function (){}
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} Airlines, flight ${this.itaCode}${flightNum}`
+    );
+  },
+};
+
+const test = zargros.book;
+test(11, "dara");
+
+zargros.book(22, "ali");
