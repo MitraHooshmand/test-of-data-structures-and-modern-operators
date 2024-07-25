@@ -172,7 +172,7 @@ greet("hey")("ALI");
 
 ////////////////////////////////////////////////////////// Call, APlly and Bind
 
-const zargros = {
+const zagros = {
   airline: "zagros",
   itaCode: "ZA",
   bookings: [],
@@ -181,10 +181,29 @@ const zargros = {
     console.log(
       `${name} booked a seat on ${this.airline} Airlines, flight ${this.itaCode}${flightNum}`
     );
+    this.bookings.push({ flight: `${this.itaCode}${flightNum}`, name });
   },
 };
 
-const test = zargros.book;
-test(11, "dara");
+const mahan = {
+  airline: "mahan",
+  itaCode: "MA",
+  bookings: [],
+};
 
-zargros.book(22, "ali");
+const taban = {
+  airline: "taban",
+  itaCode: "TA",
+  bookings: [],
+};
+
+const bookFlights = zagros.book;
+bookFlights.call(mahan, 55, "DJ fosonghori");
+bookFlights.call(zagros, 99, "sozan karami");
+bookFlights.call(zagros, 11, "ali daei");
+
+const flightData = [44, "mary coory"];
+bookFlights.call(taban, ...flightData);
+console.log(taban);
+console.log(mahan);
+console.log(zagros);
