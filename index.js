@@ -207,3 +207,32 @@ bookFlights.call(taban, ...flightData);
 console.log(taban);
 console.log(mahan);
 console.log(zagros);
+
+const addnum = (p1, p2) => p1 + p2;
+console.log(addnum(100, 8));
+
+const addHund = addnum.bind(null, 100);
+
+console.log(addHund(3));
+
+const tet = function (param1) {
+  return function (param2) {
+    return param2 + param1;
+  };
+};
+
+const var2 = tet(100);
+
+console.log(var2(8));
+/////////////////////////////////////
+console.log("sssssssssssssssssssssssssssssss");
+
+const poll = {
+  question: "What is your favourite programming language?",
+  options: ["0: JavaScript", "1: Python", "2: Rust", "3: C++"],
+  // This generates [0, 0, 0, 0]. More in the next section 😃
+  answers: new Array(4).fill(0),
+ 
+};
+
+poll.registerNewAnswer();
