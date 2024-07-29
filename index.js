@@ -131,22 +131,22 @@ showEmoji(4);
 document.body.append(document.createElement("textarea"));
 document.body.append(document.createElement("button"));
 
-document.querySelector("button").addEventListener("click", function () {
-  let firstStr,
-    secondStr,
-    result = "";
-  const str = document.querySelector("textarea").value;
-  const sepratedLineStr = str.split("\n");
+// document.querySelector("button").addEventListener("click", function () {
+//   let firstStr,
+//     secondStr,
+//     result = "";
+//   const str = document.querySelector("textarea").value;
+//   const sepratedLineStr = str.split("\n");
 
-  for (let [i, item] of sepratedLineStr.entries()) {
-    [firstStr, secondStr] = item.toLowerCase().trim().split("_");
-    result = `${firstStr}${secondStr.replace(
-      secondStr[0],
-      secondStr[0].toUpperCase()
-    )}`;
-    console.log(`${result.padEnd(20)} ${"✅".repeat(i + 1)}`);
-  }
-});
+//   for (let [i, item] of sepratedLineStr.entries()) {
+//     [firstStr, secondStr] = item.toLowerCase().trim().split("_");
+//     result = `${firstStr}${secondStr.replace(
+//       secondStr[0],
+//       secondStr[0].toUpperCase()
+//     )}`;
+//     console.log(`${result.padEnd(20)} ${"✅".repeat(i + 1)}`);
+//   }
+// });
 
 ///////////////////////////////// FLIGHTS
 
@@ -241,8 +241,17 @@ const poll = {
     typeof answer === "number" &&
       answer < this.answers.length &&
       this.answers[answer]++;
-    console.log(this.answers);
+    this.displayResults("string");
+  },
+  displayResults(type = "array") {
+    typeof type === "array"
+      ? console.log(this.answers)
+      : console.log(`Poll results are ${this.answers.join(",")}`);
   },
 };
 
-poll.registerNewAnswer();
+document
+  .querySelector(".click-btn")
+  .addEventListener("click", poll.registerNewAnswer.bind(poll));
+
+  const showResultRandom = poll.displayResults.call({answers:[2,3,5]})
