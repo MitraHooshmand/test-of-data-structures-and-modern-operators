@@ -128,8 +128,8 @@ const showEmoji = function (n) {
 
 showEmoji(4);
 
-document.body.append(document.createElement("textarea"));
-document.body.append(document.createElement("button"));
+// document.body.append(document.createElement("textarea"));
+// document.body.append(document.createElement("button"));
 
 // document.querySelector("button").addEventListener("click", function () {
 //   let firstStr,
@@ -271,3 +271,45 @@ myCounter();
 
 myCounter();
 
+let a;
+
+const b = function () {
+  let x = 12;
+  a = function () {
+    console.log(x * 2);
+  };
+};
+b();
+a();
+
+(function () {
+  const header = document.querySelector("h5");
+
+  document.querySelector("body").addEventListener("click", function () {
+    header.style.color = "CYAN";
+  });
+})();
+
+// (function () {
+//   const header = document.querySelector("h5");
+//   header.style.color = "red";
+
+//   document.querySelector("body").addEventListener("click", function () {
+//     header.style.color = "blue";
+//   });
+// })();
+
+const array = [2, 6, 8, 9, 22];
+
+console.log(array.slice(1));
+console.log(array.at(-1));
+
+const currency = new Map([
+  ["USD", "united States"],
+  ["EUR", "Europe"],
+  ["GBP", "Pound steriling"],
+]);
+
+currency.forEach(function (value, key) {
+  console.log(`${key}: ${value} `);
+});
