@@ -254,4 +254,20 @@ document
   .querySelector(".click-btn")
   .addEventListener("click", poll.registerNewAnswer.bind(poll));
 
-  const showResultRandom = poll.displayResults.call({answers:[2,3,5]})
+const showResultRandom = poll.displayResults.call({ answers: [2, 3, 5] });
+
+const testFunc = function () {
+  let counter = 0;
+  return function () {
+    counter++;
+    console.log(`counter is : ${counter}`);
+  };
+};
+
+const myCounter = testFunc();
+
+myCounter();
+myCounter();
+
+myCounter();
+
